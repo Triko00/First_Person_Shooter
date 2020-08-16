@@ -526,7 +526,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 8
-  charCon: {fileID: 0}
+  charCon: {fileID: 625404150}
 --- !u!143 &625404150
 CharacterController:
   m_ObjectHideFlags: 0
@@ -857,13 +857,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1109168275}
-  m_LocalRotation: {x: 0.0018769086, y: 0.71511185, z: 0.0019247911, w: -0.6990048}
+  m_LocalRotation: {x: -0.0026878333, y: 0, z: 0, w: 0.99999636}
   m_LocalPosition: {x: -25.214394, y: 1.5489151, z: -17.351385}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -0.30800003, y: 0, z: 0}
 --- !u!1 &1572382706
 GameObject:
   m_ObjectHideFlags: 0
