@@ -1314,6 +1314,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 15
+  lifeTime: 5
   theRB: {fileID: 2121164382}
 --- !u!65 &2121164384
 BoxCollider:
@@ -1383,7 +1384,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2121164381}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.38, y: 1.628, z: 1.633}
+  m_LocalPosition: {x: 0.25, y: 1.628, z: 5.63}
   m_LocalScale: {x: 0.021411698, y: 0.021411698, z: 0.05174352}
   m_Children: []
   m_Father: {fileID: 0}

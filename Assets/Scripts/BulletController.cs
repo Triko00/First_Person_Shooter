@@ -6,7 +6,7 @@ using UnityEngine;
 public class BulletController : MonoBehaviour
 {
 
-    public float moveSpeed;
+    public float moveSpeed, lifeTime;
 
     public Rigidbody theRB;
 
@@ -20,10 +20,17 @@ public class BulletController : MonoBehaviour
     void Update()
     {
         theRB.velocity = transform.forward * moveSpeed;
+
+        lifeTime -= Time.deltaTime;
+
+        if(lifeTime <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 
-    private void OnTriggerEnter()
+    private void OnTriggerEnter(Collider other)
     {
-    }
-       
+        Destroy(gameObject);
+    } 
 }
