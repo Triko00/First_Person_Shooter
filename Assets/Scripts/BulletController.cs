@@ -10,6 +10,8 @@ public class BulletController : MonoBehaviour
 
     public Rigidbody theRB;
 
+    public GameObject impactEffect;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,5 +34,6 @@ public class BulletController : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         Destroy(gameObject);
+        Instantiate(impactEffect, transform.position, transform.rotation);
     } 
 }
