@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float moveSpeed, gravityModifier, jumpPower;
+    public float moveSpeed, gravityModifier, jumpPower, runSpeed;
     public CharacterController charCon;
 
     private Vector3 moveInput;
@@ -18,6 +18,8 @@ public class PlayerController : MonoBehaviour
     private bool canJump, canDoubleJump;
     public Transform groundCheckPoint;
     public LayerMask whatIsGround;
+
+    public Animator anim;
 
     // Start is called before the first frame update
     void Start()
@@ -39,8 +41,16 @@ public class PlayerController : MonoBehaviour
 
         moveInput = horiMove + vertMove;
         moveInput.Normalize();
-        moveInput = moveInput * moveSpeed;
 
+        if(Input.GetKey(KeyCode.LeftShift))
+        {
+            moveInput = moveInput * runSpeed;
+        }
+        else
+        {
+            moveInput = moveInput * moveSpeed;
+        }
+        
         moveInput.y = yStore;
 
         moveInput.y += Physics.gravity.y * gravityModifier * Time.deltaTime;
@@ -87,5 +97,8 @@ public class PlayerController : MonoBehaviour
         transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y + mouseInput.x, transform.rotation.eulerAngles.z);
 
         camTrans.rotation = Quaternion.Euler(camTrans.rotation.eulerAngles + new Vector3(-mouseInput.y, 0f, 0f));
+
+        anim.SetFloat("moveSpeed", moveInput.magnitude);
+        anim.SetBool("onGround", canJump);
     }
 }
