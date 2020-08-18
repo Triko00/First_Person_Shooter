@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float moveSpeed;
+    public float moveSpeed, gravityModifier;
     public CharacterController charCon;
 
     private Vector3 moveInput;
@@ -27,12 +27,25 @@ public class PlayerController : MonoBehaviour
         /*moveInput.x = Input.GetAxis("Horizontal") * moveSpeed * Time.deltaTime;
         moveInput.z = Input.GetAxis("Vertical") * moveSpeed * Time.deltaTime;*/
 
+        //store y velocity
+        float yStore = moveInput.y;
+
         Vector3 vertMove = transform.forward * Input.GetAxis("Vertical");
         Vector3 horiMove = transform.right * Input.GetAxis("Horizontal");
 
         moveInput = horiMove + vertMove;
         moveInput.Normalize();
         moveInput = moveInput * moveSpeed;
+
+        moveInput.y = yStore;
+
+        moveInput.y += Physics.gravity.y * gravityModifier * Time.deltaTime;
+
+        if(charCon.isGrounded)
+        {
+            moveInput.y = Physics.gravity.y * gravityModifier * Time.deltaTime;
+        }
+
 
         charCon.Move(moveInput * Time.deltaTime);
 
