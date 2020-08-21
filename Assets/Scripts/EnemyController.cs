@@ -23,24 +23,26 @@ public class EnemyController : MonoBehaviour
         targetPoint = PlayerController.instance.transform.position;
         targetPoint.y = transform.position.y;
 
-        if(!chasing)
+        if (!chasing)
         {
             if (Vector3.Distance(transform.position, targetPoint) < distanceToChase)
             {
                 chasing = true;
-            } else
-            {
-
-                transform.LookAt(targetPoint);
-
-                theRB.velocity = transform.forward * moveSpeed;
-
-
-                if (Vector3.Distance(transform.position, targetPoint) > distanceToLose)
-                {
-                    chasing = false;
-                }
             }
-        } 
+        }
+        else
+        {
+
+            transform.LookAt(targetPoint);
+
+            theRB.velocity = transform.forward * moveSpeed;
+
+
+            if (Vector3.Distance(transform.position, targetPoint) > distanceToLose)
+            {
+                chasing = false;
+            }
+        }
+         
     }
 }
