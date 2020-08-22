@@ -51,7 +51,8 @@ public class BulletController : MonoBehaviour
 
         if (other.gameObject.tag == "Player" && damagePlayer)
         {
-            Debug.Log("Hit Player at " + transform.position);
+            //Debug.Log("Hit Player at " + transform.position);
+            PlayerHealthController.instance.DamagePlayer(damage);
         }
 
         Destroy(gameObject);
