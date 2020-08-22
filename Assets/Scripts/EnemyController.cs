@@ -98,7 +98,20 @@ public class EnemyController : MonoBehaviour
                     {
                         fireCount = fireRate;
 
-                        Instantiate(bullet, firePoint.position, firePoint.rotation);
+                        firePoint.LookAt(PlayerController.instance.transform.position + new Vector3(0f, 1.2f, 0f));
+
+                        // check the angle to the player
+                        Vector3 targetDir = PlayerController.instance.transform.position - transform.position;
+                        float angle = Vector3.SignedAngle(targetDir, transform.forward, Vector3.up);
+
+                        if (Mathf.Abs(angle) < 30f)
+                        {
+                            Instantiate(bullet, firePoint.position, firePoint.rotation);
+                        }
+                        else
+                        {
+                            shotWaitCounter = waitBetweenShots;
+                        }
                     }
 
                     agent.destination = transform.position;
