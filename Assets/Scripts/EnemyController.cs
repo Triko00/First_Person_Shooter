@@ -18,13 +18,16 @@ public class EnemyController : MonoBehaviour
     public GameObject bullet;
     public Transform firePoint;
 
-    public float fireRate;
-    private float fireCount;
+    public float fireRate, waitBetweenShots = 2f, timeToShoot = 1f;
+    private float fireCount, shotWaitCounter, shootTimeCounter;
 
     // Start is called before the first frame update
     void Start()
     {
         startPoint = transform.position;
+
+        shootTimeCounter = timeToShoot;
+        shotWaitCounter = waitBetweenShots;
     }
 
     // Update is called once per frame
@@ -39,7 +42,8 @@ public class EnemyController : MonoBehaviour
             {
                 chasing = true;
 
-                fireCount = 1f;
+                shootTimeCounter = timeToShoot;
+                shotWaitCounter = waitBetweenShots;
             }
 
             if (chaseCounter > 0)
@@ -74,12 +78,36 @@ public class EnemyController : MonoBehaviour
                 chaseCounter = keepChasingTime;
             }
 
-            fireCount -= Time.deltaTime;
-            if(fireCount <= 0)
+            if (shotWaitCounter > 0)
             {
-                fireCount = fireRate;
+                shotWaitCounter -= Time.deltaTime;
 
-                Instantiate(bullet, firePoint.position, firePoint.rotation);
+                if (shotWaitCounter <= 0)
+                {
+                    shootTimeCounter = timeToShoot;
+                }
+            } else
+            {
+                shootTimeCounter -= Time.deltaTime;
+
+                if (shootTimeCounter > 0)
+                {
+                    fireCount -= Time.deltaTime;
+
+                    if (fireCount <= 0)
+                    {
+                        fireCount = fireRate;
+
+                        Instantiate(bullet, firePoint.position, firePoint.rotation);
+                    }
+
+                    agent.destination = transform.position;
+                }
+                else
+                {
+                    shotWaitCounter = waitBetweenShots;
+                }
+
             }
         }
     }
