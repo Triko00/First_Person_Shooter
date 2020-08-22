@@ -5,9 +5,8 @@ using UnityEngine.AI;
 
 public class EnemyController : MonoBehaviour
 {
-    public float moveSpeed;
     private bool chasing;
-    public float distanceToChase, distanceToLose, distanceToStop = 2f;
+    public float distanceToChase, distanceToLose, distanceToStop = 4f;
 
     private Vector3 targetPoint, startPoint;
 
@@ -15,6 +14,12 @@ public class EnemyController : MonoBehaviour
 
     public float keepChasingTime = 10f;
     private float chaseCounter;
+
+    public GameObject bullet;
+    public Transform firePoint;
+
+    public float fireRate;
+    private float fireCount;
 
     // Start is called before the first frame update
     void Start()
@@ -33,7 +38,10 @@ public class EnemyController : MonoBehaviour
             if (Vector3.Distance(transform.position, targetPoint) < distanceToChase)
             {
                 chasing = true;
+
+                fireCount = 1f;
             }
+
             if (chaseCounter > 0)
             {
                 chaseCounter -= Time.deltaTime;
@@ -65,7 +73,14 @@ public class EnemyController : MonoBehaviour
 
                 chaseCounter = keepChasingTime;
             }
+
+            fireCount -= Time.deltaTime;
+            if(fireCount <= 0)
+            {
+                fireCount = fireRate;
+
+                Instantiate(bullet, firePoint.position, firePoint.rotation);
+            }
         }
-         
     }
 }
