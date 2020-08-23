@@ -58,7 +58,7 @@ public class EnemyController : MonoBehaviour
                 }
             }
 
-            if(agent.remainingDistance < .25)
+            if(agent.remainingDistance < 2)
             {
                 anim.SetBool("isMoving", false);
             }
@@ -101,43 +101,47 @@ public class EnemyController : MonoBehaviour
                 anim.SetBool("isMoving", true);
             } else
             {
-                shootTimeCounter -= Time.deltaTime;
-
-                if (shootTimeCounter > 0)
+                if (PlayerController.instance.gameObject.activeInHierarchy)
                 {
-                    fireCount -= Time.deltaTime;
 
-                    if (fireCount <= 0)
+
+                    shootTimeCounter -= Time.deltaTime;
+
+                    if (shootTimeCounter > 0)
                     {
-                        fireCount = fireRate;
+                        fireCount -= Time.deltaTime;
 
-                        firePoint.LookAt(PlayerController.instance.transform.position + new Vector3(0f, 1.2f, 0f));
-
-                        // check the angle to the player
-                        Vector3 targetDir = PlayerController.instance.transform.position - transform.position;
-                        float angle = Vector3.SignedAngle(targetDir, transform.forward, Vector3.up);
-
-                        if (Mathf.Abs(angle) < 30f)
+                        if (fireCount <= 0)
                         {
-                            Instantiate(bullet, firePoint.position, firePoint.rotation);
+                            fireCount = fireRate;
 
-                            anim.SetTrigger("fireShot");
+                            firePoint.LookAt(PlayerController.instance.transform.position + new Vector3(0f, 1.2f, 0f));
+
+                            // check the angle to the player
+                            Vector3 targetDir = PlayerController.instance.transform.position - transform.position;
+                            float angle = Vector3.SignedAngle(targetDir, transform.forward, Vector3.up);
+
+                            if (Mathf.Abs(angle) < 30f)
+                            {
+                                Instantiate(bullet, firePoint.position, firePoint.rotation);
+
+                                anim.SetTrigger("fireShot");
+                            }
+                            else
+                            {
+                                shotWaitCounter = waitBetweenShots;
+                            }
                         }
-                        else
-                        {
-                            shotWaitCounter = waitBetweenShots;
-                        }
+
+                        agent.destination = transform.position;
                     }
-
-                    agent.destination = transform.position;
-                }
-                else
-                {
-                    shotWaitCounter = waitBetweenShots;
+                    else
+                    {
+                        shotWaitCounter = waitBetweenShots;
+                    }
                 }
 
                 anim.SetBool("isMoving", false);
-
             }
         }
     }

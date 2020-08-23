@@ -616,6 +616,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d14c9e5af1c4dfa4a9f1d42f65224894, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  waitAfterDying: 3
 --- !u!1 &380358985
 GameObject:
   m_ObjectHideFlags: 0
@@ -1116,7 +1117,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cff544df60c10e84f910bfa9368c0db7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 50
+  maxHealth: 100
   currentHealth: 0
   invincibleLength: 1
 --- !u!1 &644465477
@@ -2254,8 +2255,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcd41ad1ac2321649827f63c96715b24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthSlider: {fileID: 0}
-  healthText: {fileID: 0}
+  healthSlider: {fileID: 244545400}
+  healthText: {fileID: 250007148}
 --- !u!1 &1742403554
 GameObject:
   m_ObjectHideFlags: 0
