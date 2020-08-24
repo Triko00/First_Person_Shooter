@@ -242,7 +242,7 @@ GameObject:
   - component: {fileID: 230401250}
   - component: {fileID: 230401252}
   - component: {fileID: 230401251}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -257,7 +257,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 230401249}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.029808044, y: 1.435, z: 0.018000603}
+  m_LocalPosition: {x: 0.029808044, y: 0, z: 0.018000603}
   m_LocalScale: {x: 1, y: 0.26063, z: 1}
   m_Children: []
   m_Father: {fileID: 1543532624}
@@ -2347,7 +2347,7 @@ GameObject:
   - component: {fileID: 1543532624}
   - component: {fileID: 1543532623}
   - component: {fileID: 1543532622}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Checkpoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2388,7 +2388,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1543532621}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 13.916, y: -1.435, z: 11.252}
+  m_LocalPosition: {x: 13.916, y: 0, z: 11.252}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 230401250}
@@ -2499,7 +2499,7 @@ GameObject:
   - component: {fileID: 1590458740}
   - component: {fileID: 1590458739}
   - component: {fileID: 1590458738}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Checkpoint (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2540,7 +2540,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1590458737}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 28.17, y: -1.375, z: -3.78}
+  m_LocalPosition: {x: 28.17, y: 0, z: -3.78}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2057949873}
@@ -2789,7 +2789,7 @@ GameObject:
   - component: {fileID: 2057949873}
   - component: {fileID: 2057949875}
   - component: {fileID: 2057949874}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2804,7 +2804,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2057949872}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.029808044, y: 1.375, z: 0.018000603}
+  m_LocalPosition: {x: 0.029808044, y: 0, z: 0.018000603}
   m_LocalScale: {x: 1, y: 0.26063, z: 1}
   m_Children: []
   m_Father: {fileID: 1590458740}
