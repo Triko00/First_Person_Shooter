@@ -151,7 +151,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 29989913}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.377, y: -0.26, z: 0.845}
+  m_LocalPosition: {x: 0.318, y: -0.26, z: 0.859}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1742403555}
@@ -242,7 +242,7 @@ GameObject:
   - component: {fileID: 230401250}
   - component: {fileID: 230401252}
   - component: {fileID: 230401251}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -344,7 +344,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 234.53003, y: -70.45001}
+  m_AnchoredPosition: {x: 234.53027, y: -70.44995}
   m_SizeDelta: {x: 355.70453, y: 13.695618}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &244545400
@@ -432,7 +432,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 234.53058, y: -27}
+  m_AnchoredPosition: {x: 234.53076, y: -27}
   m_SizeDelta: {x: 355.70343, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &250007147
@@ -1208,9 +1208,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   anim: {fileID: 625404152}
-  bullet: {fileID: 3863730778782448773, guid: 12f075a5225c7474681f8b52e8ef5851, type: 3}
+  bullet: {fileID: 0}
   firePoint: {fileID: 29989914}
-  activeGun: {fileID: 0}
+  activeGun: {fileID: 944330058}
 --- !u!143 &625404150
 CharacterController:
   m_ObjectHideFlags: 0
@@ -2347,7 +2347,7 @@ GameObject:
   - component: {fileID: 1543532624}
   - component: {fileID: 1543532623}
   - component: {fileID: 1543532622}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Checkpoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2499,7 +2499,7 @@ GameObject:
   - component: {fileID: 1590458740}
   - component: {fileID: 1590458739}
   - component: {fileID: 1590458738}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Checkpoint (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2789,7 +2789,7 @@ GameObject:
   - component: {fileID: 2057949873}
   - component: {fileID: 2057949875}
   - component: {fileID: 2057949874}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
