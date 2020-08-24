@@ -26,6 +26,8 @@ public class PlayerController : MonoBehaviour
     public GameObject bullet;
     public Transform firePoint;
 
+    public Gun activeGun;
+
     private void Awake()
     {
         instance = this;
@@ -126,12 +128,18 @@ public class PlayerController : MonoBehaviour
 
 
 
-            Instantiate(bullet, firePoint.position, firePoint.rotation);
+            //Instantiate(bullet, firePoint.position, firePoint.rotation);
+            FireShot();
         }
 
 
 
         anim.SetFloat("moveSpeed", moveInput.magnitude);
         anim.SetBool("onGround", canJump);
+    }
+
+    public void FireShot()
+    {
+        Instantiate(activeGun.bullet, firePoint.position, firePoint.rotation);
     }
 }
