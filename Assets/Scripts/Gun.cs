@@ -14,6 +14,8 @@ public class Gun : MonoBehaviour
 
     public int currentAmmo, pickupAmount;
 
+    public Transform firepoint;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,5 +36,6 @@ public class Gun : MonoBehaviour
         currentAmmo += pickupAmount;
 
         UIController.instance.ammoText.text = "AMMO: " + currentAmmo;
+
     }
 }
