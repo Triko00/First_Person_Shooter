@@ -1061,7 +1061,7 @@ Transform:
   - {fileID: 174249431}
   - {fileID: 1489901365}
   m_Father: {fileID: 1742403555}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &389750457
 GameObject:
@@ -1485,7 +1485,7 @@ MonoBehaviour:
   runSpeed: 10
   charCon: {fileID: 625404150}
   camTrans: {fileID: 1742403555}
-  mouseSensitivity: 2
+  mouseSensitivity: 1.5
   invertX: 0
   invertY: 0
   groundCheckPoint: {fileID: 2067957824}
@@ -1498,8 +1498,10 @@ MonoBehaviour:
   allGuns:
   - {fileID: 944330058}
   - {fileID: 174249432}
-  - {fileID: 1489901366}
   currentGun: 0
+  adsPoint: {fileID: 880888388}
+  gunHolder: {fileID: 380358986}
+  adsSpeed: 2
 --- !u!143 &625404150
 CharacterController:
   m_ObjectHideFlags: 0
@@ -1817,6 +1819,36 @@ MonoBehaviour:
   m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
+--- !u!1 &880888387
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 880888388}
+  m_Layer: 0
+  m_Name: ads point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &880888388
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 880888387}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.144, z: 0.947}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1742403555}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &893795788
 GameObject:
   m_ObjectHideFlags: 0
@@ -2442,6 +2474,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1142007194 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1431988691348505070, guid: f429e4a888dd91e4e9a524684b1b4d51,
+    type: 3}
+  m_PrefabInstance: {fileID: 1904651326}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1271599512 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4187589826811268711, guid: 8434d74bfe32e7548ada570db5295128,
@@ -2799,6 +2837,71 @@ MonoBehaviour:
   pickupAmount: 5
   firepoint: {fileID: 571466274}
   zoomAmount: 20
+--- !u!1 &1518480896
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1518480899}
+  - component: {fileID: 1518480898}
+  - component: {fileID: 1518480897}
+  m_Layer: 10
+  m_Name: Weapon Pickup
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!95 &1518480897
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1518480896}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 572bd1ac2bde1a34f9c12a58dcf84612, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!135 &1518480898
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1518480896}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1
+  m_Center: {x: 0, y: 0, z: 0.5}
+--- !u!4 &1518480899
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1518480896}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.83, y: 0.7, z: 8.9}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1142007194}
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1543532621
 GameObject:
   m_ObjectHideFlags: 0
@@ -3303,6 +3406,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 1.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 880888388}
   - {fileID: 380358986}
   m_Father: {fileID: 625404151}
   m_RootOrder: 1
@@ -3342,8 +3446,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -63.9, y: -3.7}
-  m_SizeDelta: {x: 548.3936, y: 65.76428}
+  m_AnchoredPosition: {x: -56.73, y: -10.12}
+  m_SizeDelta: {x: 562.7409, y: 78.60132}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1847466087
 MonoBehaviour:
@@ -3401,6 +3505,85 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1847466085}
   m_CullTransparentMesh: 0
+--- !u!1001 &1904651326
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1518480899}
+    m_Modifications:
+    - target: {fileID: 1431988691348505070, guid: f429e4a888dd91e4e9a524684b1b4d51,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1431988691348505070, guid: f429e4a888dd91e4e9a524684b1b4d51,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1431988691348505070, guid: f429e4a888dd91e4e9a524684b1b4d51,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1431988691348505070, guid: f429e4a888dd91e4e9a524684b1b4d51,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1431988691348505070, guid: f429e4a888dd91e4e9a524684b1b4d51,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1431988691348505070, guid: f429e4a888dd91e4e9a524684b1b4d51,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1431988691348505070, guid: f429e4a888dd91e4e9a524684b1b4d51,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1431988691348505070, guid: f429e4a888dd91e4e9a524684b1b4d51,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1431988691348505070, guid: f429e4a888dd91e4e9a524684b1b4d51,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1431988691348505070, guid: f429e4a888dd91e4e9a524684b1b4d51,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1431988691348505070, guid: f429e4a888dd91e4e9a524684b1b4d51,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1431988691348505071, guid: f429e4a888dd91e4e9a524684b1b4d51,
+        type: 3}
+      propertyPath: m_Name
+      value: Sniper Model
+      objectReference: {fileID: 0}
+    - target: {fileID: 1431988691348505071, guid: f429e4a888dd91e4e9a524684b1b4d51,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6989198728988672625, guid: f429e4a888dd91e4e9a524684b1b4d51,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f429e4a888dd91e4e9a524684b1b4d51, type: 3}
 --- !u!4 &2030272184 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: e4299bf26a09e9049839e1a1b75e562c,
