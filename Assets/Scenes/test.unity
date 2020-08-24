@@ -3086,7 +3086,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sharedProfile: {fileID: 11400000, guid: fdc1b598d6a24cf4792a1d9993f68940, type: 2}
-  isGlobal: 0
+  isGlobal: 1
   blendDistance: 100
   weight: 0.5
   priority: 0

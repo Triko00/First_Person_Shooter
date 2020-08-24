@@ -18,7 +18,7 @@ MonoBehaviour:
     value: 1
   intensity:
     overrideState: 1
-    value: 100
+    value: 3
   threshold:
     overrideState: 0
     value: 1
@@ -81,7 +81,7 @@ MonoBehaviour:
     value: 1
   shutterAngle:
     overrideState: 1
-    value: 180
+    value: 360
   sampleCount:
     overrideState: 1
     value: 20
@@ -105,8 +105,8 @@ MonoBehaviour:
     overrideState: 0
     value: 1
   intensity:
-    overrideState: 0
-    value: 0
+    overrideState: 1
+    value: 0.5
   color:
     overrideState: 0
     value: {r: 0, g: 0, b: 0, a: 1}
