@@ -324,12 +324,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 3863730778782448773, guid: 7d40371d0a3ab4d459b7fbde4e6dceb3, type: 3}
   canAutoFire: 1
-  fireRate: 0.1
+  fireRate: 0.2
   fireCounter: 0
   currentAmmo: 100
   pickupAmount: 30
   firepoint: {fileID: 2104592713}
   zoomAmount: 40
+  gunName: Repeater
 --- !u!4 &216387316 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: ee04d31f9bb7df246b2a753230c2bbb5,
@@ -1498,6 +1499,8 @@ MonoBehaviour:
   allGuns:
   - {fileID: 944330058}
   - {fileID: 174249432}
+  unlockableGuns:
+  - {fileID: 1489901366}
   currentGun: 0
   adsPoint: {fileID: 880888388}
   gunHolder: {fileID: 380358986}
@@ -1995,6 +1998,7 @@ MonoBehaviour:
   pickupAmount: 15
   firepoint: {fileID: 678964341}
   zoomAmount: 50
+  gunName: Pistol
 --- !u!1 &965635875
 GameObject:
   m_ObjectHideFlags: 0
@@ -2228,6 +2232,7 @@ GameObject:
   - component: {fileID: 1109168277}
   - component: {fileID: 1109168276}
   - component: {fileID: 1109168279}
+  - component: {fileID: 1109168280}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2296,7 +2301,8 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 1.98, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1547787057}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2315,6 +2321,66 @@ MonoBehaviour:
   target: {fileID: 1742403555}
   zoomSpeed: 10
   theCam: {fileID: 1109168277}
+--- !u!114 &1109168280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1109168275}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 948f4100a11a5c24981795d21301da5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volumeTrigger: {fileID: 1109168278}
+  volumeLayer:
+    serializedVersion: 2
+    m_Bits: 2048
+  stopNaNPropagation: 1
+  finalBlitToCameraTarget: 0
+  antialiasingMode: 0
+  temporalAntialiasing:
+    jitterSpread: 0.75
+    sharpness: 0.25
+    stationaryBlending: 0.95
+    motionBlending: 0.85
+  subpixelMorphologicalAntialiasing:
+    quality: 2
+  fastApproximateAntialiasing:
+    fastMode: 0
+    keepAlpha: 0
+  fog:
+    enabled: 1
+    excludeSkybox: 1
+  debugLayer:
+    lightMeter:
+      width: 512
+      height: 256
+      showCurves: 1
+    histogram:
+      width: 512
+      height: 256
+      channel: 3
+    waveform:
+      exposure: 0.12
+      height: 256
+    vectorscope:
+      size: 256
+      exposure: 0.12
+    overlaySettings:
+      linearDepth: 0
+      motionColorIntensity: 4
+      motionGridSize: 64
+      colorBlindnessType: 0
+      colorBlindnessStrength: 1
+  m_Resources: {fileID: 11400000, guid: d82512f9c8e5d4a4d938b575d47f88d4, type: 2}
+  m_ShowToolkit: 0
+  m_ShowCustomSorter: 0
+  breakBeforeColorGrading: 0
+  m_BeforeTransparentBundles: []
+  m_BeforeStackBundles: []
+  m_AfterStackBundles: []
 --- !u!1 &1117559059
 GameObject:
   m_ObjectHideFlags: 0
@@ -2837,6 +2903,7 @@ MonoBehaviour:
   pickupAmount: 5
   firepoint: {fileID: 571466274}
   zoomAmount: 20
+  gunName: Sniper
 --- !u!1 &1518480896
 GameObject:
   m_ObjectHideFlags: 0
@@ -2848,6 +2915,7 @@ GameObject:
   - component: {fileID: 1518480899}
   - component: {fileID: 1518480898}
   - component: {fileID: 1518480897}
+  - component: {fileID: 1518480900}
   m_Layer: 10
   m_Name: Weapon Pickup
   m_TagString: Untagged
@@ -2902,6 +2970,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1518480900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1518480896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bdd9d8367b36b404da03d01e7a2a797d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  theGun: Sniper
 --- !u!1 &1543532621
 GameObject:
   m_ObjectHideFlags: 0
@@ -2961,6 +3042,54 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1547787056
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1547787057}
+  - component: {fileID: 1547787058}
+  m_Layer: 0
+  m_Name: PostProcessVolume
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1547787057
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1547787056}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1109168278}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1547787058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1547787056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sharedProfile: {fileID: 11400000, guid: fdc1b598d6a24cf4792a1d9993f68940, type: 2}
+  isGlobal: 0
+  blendDistance: 0
+  weight: 1
+  priority: 0
 --- !u!1 &1572382706
 GameObject:
   m_ObjectHideFlags: 0
