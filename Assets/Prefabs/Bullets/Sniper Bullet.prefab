@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 3863730778782448774}
   - component: {fileID: 1306908781828210336}
   m_Layer: 9
-  m_Name: Enemy Bullet
+  m_Name: Sniper Bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30,7 +30,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3863730778782448773}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.351, y: 1.628, z: 7.494}
+  m_LocalPosition: {x: -0.351, y: 0.28, z: 4.45}
   m_LocalScale: {x: 0.021411698, y: 0.021411698, z: 0.05174352}
   m_Children: []
   m_Father: {fileID: 0}
@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 85fff9a69c0d42245bc5346e42c9e2ef, type: 2}
+  - {fileID: 2100000, guid: 4ada6e76ee3618b4b829b0f6c4dc7961, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -111,11 +111,11 @@ MonoBehaviour:
   moveSpeed: 20
   lifeTime: 5
   theRB: {fileID: 3863730778782448774}
-  impactEffect: {fileID: 3866527995911804262, guid: ffc4d4c3621f7a446ada0791cf755958,
+  impactEffect: {fileID: 3866527995911804262, guid: c48d3297b6734754c95e917e0685bcd9,
     type: 3}
-  damage: 10
-  damageEnemy: 0
-  damagePlayer: 1
+  damage: 5
+  damageEnemy: 1
+  damagePlayer: 0
 --- !u!54 &3863730778782448774
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -151,7 +151,7 @@ TrailRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 85fff9a69c0d42245bc5346e42c9e2ef, type: 2}
+  - {fileID: 2100000, guid: 4ada6e76ee3618b4b829b0f6c4dc7961, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
