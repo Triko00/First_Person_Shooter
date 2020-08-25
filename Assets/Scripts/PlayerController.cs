@@ -37,6 +37,9 @@ public class PlayerController : MonoBehaviour
 
     public AudioSource footstepFast, footstepSlow;
 
+    private float bounceAmount;
+    private bool bounce;
+
     private void Awake()
     {
         instance = this;
@@ -112,6 +115,15 @@ public class PlayerController : MonoBehaviour
             canDoubleJump = false;
 
             AudioManager.instance.PlaySFX(8);
+        }
+
+
+        if(bounce)
+        {
+            bounce = false;
+            moveInput.y = bounceAmount;
+
+            canDoubleJump = true;
         }
 
         charCon.Move(moveInput * Time.deltaTime);
@@ -255,5 +267,11 @@ public class PlayerController : MonoBehaviour
             currentGun = allGuns.Count - 2;
             SwitchGun();
         }
+    }
+
+    public void Bounce(float bounceForce)
+    {
+        bounceAmount = bounceForce;
+        bounce = true;
     }
 }
