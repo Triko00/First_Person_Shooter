@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HealthPickupController : MonoBehaviour
 {
-    private bool isCollected;
+    private bool isCollected = false;
 
     public int healAmount;
 
@@ -17,6 +17,8 @@ public class HealthPickupController : MonoBehaviour
             Destroy(gameObject);
 
             AudioManager.instance.PlaySFX(4);
+
+            isCollected = true;
         }
     }
 }
