@@ -52,6 +52,11 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!UIController.instance.pauseScreen.activeInHierarchy)
+        {
+
+        
+
         /*moveInput.x = Input.GetAxis("Horizontal") * moveSpeed * Time.deltaTime;
         moveInput.z = Input.GetAxis("Vertical") * moveSpeed * Time.deltaTime;*/
 
@@ -183,6 +188,7 @@ public class PlayerController : MonoBehaviour
         anim.SetBool("onGround", canJump);
     }
 
+    }
     public void FireShot()
     {
         if (activeGun.currentAmmo > 0)

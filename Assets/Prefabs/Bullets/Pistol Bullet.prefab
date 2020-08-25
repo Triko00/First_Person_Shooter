@@ -30,7 +30,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3863730778782448773}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.522, y: 1.628, z: 2.9}
+  m_LocalPosition: {x: 4.545, y: 1.628, z: 3.246}
   m_LocalScale: {x: 0.021411698, y: 0.021411698, z: 0.05174352}
   m_Children: []
   m_Father: {fileID: 0}
@@ -108,7 +108,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8e819c7be930194dacf21d2d02f55f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 20
+  moveSpeed: 25
   lifeTime: 5
   theRB: {fileID: 3863730778782448774}
   impactEffect: {fileID: 3866527995911804262, guid: 15b309b8b081ccb489336263d3d0184b,
@@ -172,7 +172,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 0.1
+  m_Time: 0.07
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1
