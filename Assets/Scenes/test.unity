@@ -2117,6 +2117,8 @@ MonoBehaviour:
   adsPoint: {fileID: 880888388}
   gunHolder: {fileID: 380358986}
   adsSpeed: 2
+  footstepFast: {fileID: 2018700059}
+  footstepSlow: {fileID: 1859452774}
 --- !u!143 &625404150
 CharacterController:
   m_ObjectHideFlags: 0

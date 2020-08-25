@@ -35,6 +35,8 @@ public class PlayerController : MonoBehaviour
     private Vector3 gunStartPos;
     public float adsSpeed;
 
+    public AudioSource footstepFast, footstepSlow;
+
     private void Awake()
     {
         instance = this;
