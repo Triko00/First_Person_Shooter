@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     public float waitAfterDying = 3f;
 
     [HideInInspector]
-    public bool ending;
+    public bool levelEnding;
 
     private void Awake()
     {

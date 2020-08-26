@@ -25,7 +25,7 @@ public class LevelExit : MonoBehaviour
     {
         if(other.tag == "Player")
         {
-            GameManager.instance.ending = true;
+            GameManager.instance.levelEnding = true;
 
             StartCoroutine(EndLevelCo());
         }
