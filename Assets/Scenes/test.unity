@@ -2158,7 +2158,6 @@ GameObject:
   - component: {fileID: 620739092}
   - component: {fileID: 620739093}
   - component: {fileID: 620739094}
-  - component: {fileID: 620739095}
   m_Layer: 0
   m_Name: Bounce Pad
   m_TagString: Enemy
@@ -2207,19 +2206,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bounceForce: 20
---- !u!114 &620739095
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 620739091}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a2684ad10486b8c44a0d6a6e1f352c82, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentHealth: 10
 --- !u!1 &625404148
 GameObject:
   m_ObjectHideFlags: 0
@@ -2492,7 +2478,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa510236989879e4b9cd7af641ecac54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 3863730778782448773, guid: f136f74a9167c2c48a557dc766929073, type: 3}
+  bullet: {fileID: 5627141035711975766, guid: 679f424f3fbb42b439a64cc7570b4537, type: 3}
   rangeToTargetPlayer: 20
   timeBetweenShots: 0.5
   gun: {fileID: 1566328007}
@@ -2506,7 +2492,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 672421559}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.569, y: 3.95, z: 18.029}
+  m_LocalPosition: {x: -5.5396595, y: 3.95, z: 17.9657}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1647317950}
@@ -7014,7 +7000,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1967156185}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.056716576, y: 0.7656324, z: -2.3373113}
+  m_LocalPosition: {x: 0.056716576, y: 0.7656324, z: -2.56}
   m_LocalScale: {x: 2.9850745, y: 2.9850745, z: 2.9850745}
   m_Children: []
   m_Father: {fileID: 1566328007}
