@@ -28,11 +28,15 @@ public class LevelExit : MonoBehaviour
             GameManager.instance.levelEnding = true;
 
             StartCoroutine(EndLevelCo());
+
+            AudioManager.instance.PlayLevelVictory();
         }
     }
 
     private IEnumerator EndLevelCo()
     {
+        PlayerPrefs.SetString(nextLevel + "_cp", "");
+
         yield return new WaitForSeconds(waitToEndLevel);
 
         SceneManager.LoadScene(nextLevel);
