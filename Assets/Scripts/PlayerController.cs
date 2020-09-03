@@ -40,6 +40,8 @@ public class PlayerController : MonoBehaviour
     private float bounceAmount;
     private bool bounce;
 
+    public float maxViewAngle = 60f;
+
     private void Awake()
     {
         instance = this;
@@ -144,7 +146,15 @@ public class PlayerController : MonoBehaviour
 
         camTrans.rotation = Quaternion.Euler(camTrans.rotation.eulerAngles + new Vector3(-mouseInput.y, 0f, 0f));
 
-
+        if(camTrans.rotation.eulerAngles.x > maxViewAngle && camTrans.rotation.eulerAngles.x < 180f)
+        {
+            camTrans.rotation = Quaternion.Euler(maxViewAngle, camTrans.rotation.eulerAngles.y, camTrans.rotation.eulerAngles.z);
+        }
+        else if (camTrans.rotation.eulerAngles.x > 180f && camTrans.eulerAngles.x < 360f - maxViewAngle)
+        {
+            camTrans.rotation = Quaternion.Euler(-maxViewAngle, camTrans.rotation.eulerAngles.y, camTrans.rotation.eulerAngles.z);
+        }
+        
         //Handle Shooting
         //single shots
         if(Input.GetMouseButtonDown(0) && activeGun.fireCounter <= 0)
