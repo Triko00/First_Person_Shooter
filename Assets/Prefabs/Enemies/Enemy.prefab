@@ -96,6 +96,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentHealth: 5
+  theEC: {fileID: 6721988434276169847}
 --- !u!114 &6721988434276169847
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -119,6 +120,7 @@ MonoBehaviour:
   waitBetweenShots: 2
   timeToShoot: 1
   anim: {fileID: 6721988435042920497}
+  wasShot: 0
 --- !u!195 &6721988434276169840
 NavMeshAgent:
   m_ObjectHideFlags: 0

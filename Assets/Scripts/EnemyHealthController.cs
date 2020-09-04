@@ -5,6 +5,8 @@ using UnityEngine;
 public class EnemyHealthController : MonoBehaviour
 {
     public int currentHealth = 5;
+
+    public EnemyController theEC;
     
     // Start is called before the first frame update
     void Start()
@@ -22,9 +24,16 @@ public class EnemyHealthController : MonoBehaviour
     {
         currentHealth -= damageAmount;
 
+        if (theEC != null)
+        {
+            theEC.GetShot();
+        }
+
         if(currentHealth <= 0)
         {
             Destroy(gameObject);
+
+            //AudioManager.instance.PlaySFX(2);
         }
     }
 }
